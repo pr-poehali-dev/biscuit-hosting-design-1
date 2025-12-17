@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const features = [
     {
       icon: "Zap",
@@ -111,7 +113,7 @@ const Index = () => {
 
           <div className="flex items-center gap-3">
             <Button variant="ghost">Войти</Button>
-            <Button className="bg-gradient-to-r from-primary to-orange-600 hover:opacity-90">
+            <Button className="bg-gradient-to-r from-primary to-orange-600 hover:opacity-90" onClick={() => navigate("/dashboard")}>
               Начать бесплатно
             </Button>
           </div>
@@ -132,7 +134,7 @@ const Index = () => {
             Загрузка страниц менее 1 секунды гарантирована.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-orange-600 hover:opacity-90 text-lg px-8 py-6">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-orange-600 hover:opacity-90 text-lg px-8 py-6" onClick={() => navigate("/dashboard")}>
               Попробовать бесплатно
               <Icon name="ArrowRight" size={20} className="ml-2" />
             </Button>
